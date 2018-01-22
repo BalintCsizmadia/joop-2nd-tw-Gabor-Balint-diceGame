@@ -1,1 +1,3 @@
 package com.codecool;
+
+// getStatistics()
