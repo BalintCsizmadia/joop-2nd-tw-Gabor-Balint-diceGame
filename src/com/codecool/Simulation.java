@@ -10,37 +10,57 @@ import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
-import java.util.*;
-public class Simulation{
+public class Simulation {
+    int limit = 50;
+    int[] nums = new int[limit];
+    StringBuffer allNumber;
 
-    int firstDie, secondDie;
-
-    public Simulation(int firstDie, int secondDie){
-        this.firstDie = firstDie;
-        this.secondDie = secondDie;
+    public Simulation() {
     }
     
-    public void generateDate(){
+    public void generateData(){
+        int[] tempArr = new int[nums.length + 1];
         Random randomDice = new Random();
-        int firstDie = randomDice.nextInt(6) + 1;
-        int secondDie = randomDice.nextInt(6) + 1;
-        int result = firstDie + secondDie;
-        /*System.out.println(firstDie);
-        System.out.println(secondDie);
-        System.out.println(result);*/
-        String res = "" + result;
-
+        for (int i = 0; i <= limit; i++){
+            int firstDie = randomDice.nextInt(6) + 1;
+            int secondDie = randomDice.nextInt(6) + 1;
+            int result = firstDie + secondDie;
+            tempArr[i] = result;
+        }
+        nums = tempArr;
 
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("com/codecool/results.csv", true));
             StringBuilder sb = new StringBuilder();
-            bw.write (res);
-            bw.append(",");
+            for (int i = 0; i < nums.length -1; i++) {
+                    sb.append(nums[i]);
+                    sb.append(",");
+                }
+            String finish = sb.toString().replaceAll(",$", "");
+        //    System.out.println(finish);
+            bw.write (finish + "\n");
             bw.close();
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
         }
+        catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
     }
 
-    
+
+    public void load() {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("com/codecool/results.csv"));
+            allNumber = new StringBuffer("");
+            String line = null;
+            while((line = br.readLine()) != null){
+               System.out.println(line);
+                allNumber.append(line); // ide még kéne közé vessző
+            }
+        }
+        catch (IOException ice) {
+            ice.printStackTrace();
+        }
+  //      System.out.println(allNumber);
+    }
+
 }
