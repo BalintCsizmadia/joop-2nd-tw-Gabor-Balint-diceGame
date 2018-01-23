@@ -14,6 +14,7 @@ public class Simulation {
     int limit = 10;
     int[] nums = new int[limit];
     StringBuffer allNumber;
+    int[] intArray;
 
     public Simulation() {
     }
@@ -62,7 +63,7 @@ public class Simulation {
         }
         String allNumberString = allNumber.toString();
         String[] stringArray = allNumberString.split(",");
-        int[] intArray = new int[stringArray.length];
+        intArray = new int[stringArray.length];
         for (int i = 0; i < stringArray.length; i++) {
             String numberAsString = stringArray[i];
             intArray[i] = Integer.parseInt(numberAsString);
