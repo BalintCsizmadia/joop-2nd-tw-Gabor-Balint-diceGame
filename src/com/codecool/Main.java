@@ -10,9 +10,7 @@ public class Main{
         Logger logger = new Logger();
         Simulation simulation = new Simulation();
         Simulator simulator = new Simulator(simulation, logger);
-        simulator.logger.log("Test message", "it works");
         simulator.run();
-        simulation.load();
 
     }
 }
