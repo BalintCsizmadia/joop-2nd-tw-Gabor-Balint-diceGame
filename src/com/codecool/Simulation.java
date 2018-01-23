@@ -11,7 +11,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class Simulation {
-    int limit = 50;
+    int limit = 10;
     int[] nums = new int[limit];
     StringBuffer allNumber;
 
@@ -54,13 +54,23 @@ public class Simulation {
             String line = null;
             while((line = br.readLine()) != null){
                System.out.println(line);
-                allNumber.append(line); // ide még kéne közé vessző
+                allNumber.append(line + ","); // ide még kéne közé vessző
             }
         }
         catch (IOException ice) {
             ice.printStackTrace();
         }
-  //      System.out.println(allNumber);
+        String allNumberString = allNumber.toString();
+        String[] stringArray = allNumberString.split(",");
+        int[] intArray = new int[stringArray.length];
+        for (int i = 0; i < stringArray.length; i++) {
+            String numberAsString = stringArray[i];
+            intArray[i] = Integer.parseInt(numberAsString);
+        }
+
+
+
+
     }
 
 }
