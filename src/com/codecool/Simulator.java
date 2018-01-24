@@ -76,7 +76,7 @@ public class Simulator {
         }
         Result result = new Result(snakeEye, aceDeuce, yo, boxCars, hiLo, anyCraps, anySeven, allGame);
         
-        System.out.println(result.getStatistics()); // most ez printel egyet
+        // System.out.println(result.getStatistics()); // most ez printel egyet
 
         return result;
 

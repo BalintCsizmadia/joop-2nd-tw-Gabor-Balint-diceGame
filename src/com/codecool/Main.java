@@ -15,6 +15,7 @@ public class Main{
         Simulator simulator = new Simulator(simulation, logger);
         simulator.run();
         Statistics statistics = new Statistics();
+    
 
     }
 }
