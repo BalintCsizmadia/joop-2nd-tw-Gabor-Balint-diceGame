@@ -5,7 +5,7 @@ public class Main{
     int round;
 
     public static Simulation generateSimulation(int round) {
-        Simulation rounds = new Simulation();
+        Simulation rounds = new Simulation(round);
         rounds.generateData();
         rounds.load();
         
@@ -14,7 +14,7 @@ public class Main{
     
     public static void main(String[] args) {
         Logger logger = new Logger();
-        Simulation simulation = generateSimulation(100);
+        Simulation simulation = generateSimulation(Integer.parseInt(args[0]));
         Simulator simulator = new Simulator(simulation, logger);
         simulator.run();
 

@@ -11,15 +11,17 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class Simulation {
-    int limit = 10;
-    int[] nums = new int[limit];
+    int limit;
+    int[] nums;
     StringBuffer allNumber;
     int[] intArray;
 
-    public Simulation() {
+    public Simulation(int limit) {
+        this.limit = limit;
+        this.nums = new int[limit];
     }
     
-    public void generateData(){
+    public void generateData() {
         int[] tempArr = new int[nums.length + 1];
         Random randomDice = new Random();
         for (int i = 0; i <= limit; i++){
