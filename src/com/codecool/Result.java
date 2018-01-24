@@ -1,5 +1,8 @@
 package com.codecool;
 
+
+import java.text.DecimalFormat;
+
 public class Result {
 
     int snakeEye;
@@ -20,10 +23,17 @@ public class Result {
         this.anyCraps = anyCraps;
         this.anySeven = anySeven;
         this.allGame = allGame;
+        
     }
 
+
+
+
     public String getStatistics() {
-        return "Snake eye: " + snakeEye + " wins from " + allGame + " games.\n" + 
+        float snakeNumber = (((float)snakeEye / (float)allGame) * (float)100);
+        DecimalFormat df = new DecimalFormat("###.##");
+        String snakePercent = df.format(snakeNumber);
+        return "Snake eye: " + snakeEye + " wins from " + allGame + " games." + snakePercent + "%\n" +
                "Ace-deuce: " + aceDeuce + " wins from " + allGame + " games.\n" + 
                "Yo: " + yo + " wins from " + allGame + " games.\n" +
                "Boxcars: " + boxCars + " wins from " + allGame + " games.\n" +
