@@ -14,11 +14,14 @@ public class Main{
     
     public static void main(String[] args) {
         Logger logger = new Logger();
-        Simulation simulation = generateSimulation(Integer.parseInt(args[0]));
+        if (Integer.parseInt(args[0]) >= 1) {
+        Simulation simulation = generateSimulation(Integer.parseInt(args[0]));    
         Simulator simulator = new Simulator(simulation, logger);
-        simulator.run();
         logger.log("all games", Integer.toString(simulator.run().stats.allGame));
         logger.logStringStatistic(simulator.run().stats.calcStaticSnakePercent());
+        } else {
+            logger.log("Error", "Enter a bigger number");
+        }
 
     }
 }
