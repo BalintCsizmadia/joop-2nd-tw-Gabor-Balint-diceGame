@@ -12,8 +12,6 @@ public class Simulator {
     }
 
     public Result run() {
-        simulation.generateData();
-        simulation.load();
        // logger.log("run", "adatok feldolgozva és visszatoltve");
         int wins = 0;
 /*
@@ -74,7 +72,8 @@ public class Simulator {
             }
             
         }
-        Result result = new Result(snakeEye, aceDeuce, yo, boxCars, hiLo, anyCraps, anySeven, allGame);
+        Statistics stats = new Statistics(snakeEye, aceDeuce, yo, boxCars, hiLo, anyCraps, anySeven, allGame);
+        Result result = new Result(stats);
         
         // System.out.println(result.getStatistics()); // most ez printel egyet
 

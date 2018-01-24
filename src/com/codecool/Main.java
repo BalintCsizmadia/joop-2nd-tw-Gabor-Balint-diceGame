@@ -4,18 +4,19 @@ public class Main{
 
     int round;
 
-    public Simulation generateSimulation(int round) {
+    public static Simulation generateSimulation(int round) {
         Simulation rounds = new Simulation();
-        return null;
+        rounds.generateData();
+        rounds.load();
+        
+        return rounds;
     }
     
     public static void main(String[] args) {
         Logger logger = new Logger();
-        Simulation simulation = new Simulation();
+        Simulation simulation = generateSimulation(100);
         Simulator simulator = new Simulator(simulation, logger);
         simulator.run();
-        Statistics statistics = new Statistics();
-    
 
     }
 }

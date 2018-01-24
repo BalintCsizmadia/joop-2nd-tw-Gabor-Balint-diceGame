@@ -2,17 +2,29 @@ package com.codecool;
 
 public class Statistics{
 
-    public Statistics() {
-        Logger log = new Logger();
-        Simulation sim = new Simulation();
-        Simulator simu = new Simulator(sim, log);
+    int snakeEye;
+    int aceDeuce;
+    int yo;
+    int boxCars;
+    int hiLo;
+    int anyCraps;
+    int anySeven;
+    int allGame;
 
-        System.out.println(simu.run().getStatistics());
 
+    public Statistics(int snakeEye, int aceDeuce, int yo, int boxCars, int hiLo, int anyCraps, int anySeven, int allGame) {
+        this.snakeEye = snakeEye;
+        this.aceDeuce = aceDeuce;
+        this.yo = yo;
+        this.boxCars = boxCars;
+        this.hiLo = hiLo;
+        this.anyCraps = anyCraps;
+        this.anySeven = anySeven;
+        this.allGame = allGame;
 
        // System.out.println(result.getStatistics());
-
-        
+  
     }
+    
     
 }
