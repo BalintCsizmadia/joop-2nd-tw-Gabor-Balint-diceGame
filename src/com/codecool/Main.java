@@ -2,7 +2,10 @@ package com.codecool;
 
 public class Main{
 
+    int round;
+
     public Simulation generateSimulation(int round) {
+        Simulation rounds = new Simulation();
         return null;
     }
     
@@ -11,6 +14,7 @@ public class Main{
         Simulation simulation = new Simulation();
         Simulator simulator = new Simulator(simulation, logger);
         simulator.run();
+        Statistics statistics = new Statistics();
 
     }
 }

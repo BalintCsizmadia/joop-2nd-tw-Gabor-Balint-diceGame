@@ -54,8 +54,8 @@ public class Simulation {
             allNumber = new StringBuffer("");
             String line = null;
             while((line = br.readLine()) != null){
-               System.out.println(line);
-                allNumber.append(line + ","); // ide még kéne közé vessző
+        //       System.out.println(line);
+                allNumber.append(line + ",");
             }
         }
         catch (IOException ice) {
@@ -68,9 +68,6 @@ public class Simulation {
             String numberAsString = stringArray[i];
             intArray[i] = Integer.parseInt(numberAsString);
         }
-
-
-
 
     }
 
