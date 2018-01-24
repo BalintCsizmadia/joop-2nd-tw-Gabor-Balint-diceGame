@@ -17,6 +17,8 @@ public class Main{
         Simulation simulation = generateSimulation(Integer.parseInt(args[0]));
         Simulator simulator = new Simulator(simulation, logger);
         simulator.run();
+        logger.log("all games", Integer.toString(simulator.run().stats.allGame));
+        logger.logStringStatistic(simulator.run().stats.calcStaticSnakePercent());
 
     }
 }

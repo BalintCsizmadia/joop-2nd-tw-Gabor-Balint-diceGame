@@ -16,4 +16,8 @@ public class Logger{
         System.out.println("Type: " + type + "\nMessage: " + message);
     }
 
+    public void logStringStatistic(String string){
+        System.out.println(string);
+    }
+
 }
