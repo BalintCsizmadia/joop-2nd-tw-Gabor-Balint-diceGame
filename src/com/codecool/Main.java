@@ -17,8 +17,9 @@ public class Main{
         if (Integer.parseInt(args[0]) >= 1) {
         Simulation simulation = generateSimulation(Integer.parseInt(args[0]));    
         Simulator simulator = new Simulator(simulation, logger);
-        logger.log("all games", Integer.toString(simulator.run().stats.allGame));
-        logger.logStringStatistic(simulator.run().stats.calcStaticSnakePercent());
+        logger.log("All games", Integer.toString(simulator.run().stats.allGame));
+        logger.log("Snake eye winning percent: ", simulator.run().stats.calcStaticSnakePercent() + " %");
+        logger.log("Ace-deuce winning percent: ", simulator.run().stats.calcStaticAcePercent() + " %");
         } else {
             logger.log("Error", "Enter a bigger number");
         }
