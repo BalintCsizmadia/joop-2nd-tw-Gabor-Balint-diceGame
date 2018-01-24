@@ -91,6 +91,7 @@ public class Simulator {
                "Hi-lo: " + hiLo + " wins from " + allGame + " games.\n" +
                "Any craps: " + anyCraps + " wins from " + allGame + " games.\n" + 
                "Any seven: " + anySeven + " wins from "  + allGame + " games.";
+    }
     */
     
         
