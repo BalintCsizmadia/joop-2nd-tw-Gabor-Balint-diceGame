@@ -27,7 +27,6 @@ public class Main{
             
             
             while(true){
-                long startTime = System.nanoTime();
                 logger.simpleLog("( 1.) Win from games.");
                 logger.simpleLog("( 2.) Winning percent.");
                 logger.simpleLog("( 3.) Make me millionare, bet this!");
@@ -35,6 +34,7 @@ public class Main{
                 int answer;
                 Scanner scanner = new Scanner(System.in);
                 answer = scanner.nextInt();
+                long startTime = System.nanoTime();
                 if(answer == 1){
                     logger.loadScreen();
                     logger.twoDatasLog("Details from ", Integer.toString(allGames) + " simulations:\n");
