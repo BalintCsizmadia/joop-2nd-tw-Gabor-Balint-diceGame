@@ -23,7 +23,7 @@ public class Logger{
     }
 
     public void informLog(String message, int game, String wf, int fromAllGame, String endMessage) {
-        System.out.println(message + game + " win from " + fromAllGame + endMessage);
+        System.out.println(message + game + " wins from " + fromAllGame + endMessage);
     }
 
     public void loadWaiting(int time) {        
@@ -64,6 +64,7 @@ public class Logger{
         loadWaiting(700);
         System.out.println("\033[H\033[2J");
         System.out.println("Simulation completed.\n");
-        loadWaiting(700);
+        loadWaiting(800);
+        System.out.println("\033[H\033[2J");
     }
 }

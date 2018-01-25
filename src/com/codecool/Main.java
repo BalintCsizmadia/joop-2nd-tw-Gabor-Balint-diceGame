@@ -28,7 +28,7 @@ public class Main{
                 logger.simpleLog("( 1.) Win from games");
                 logger.simpleLog("( 2.) Winning percent");
                 logger.simpleLog("( 3.) Make me millionaire, bet this!");
-                logger.simpleLog("( 4 ) Rules and chances");
+                logger.simpleLog("( 4.) Rules and chances");
                 logger.simpleLog("( 0.) Exit");
                 int answer = 0;
                 Scanner scanner = new Scanner(System.in);
@@ -51,9 +51,9 @@ public class Main{
                     logger.informLog("Any craps: ", path.anyCraps, "wf", allGames, " games.\n");  // 7:1
                     logger.informLog("Any seven: ", path.anySeven, "wf", allGames, " games.\n");  // 4:1
                     final long duration = (System.nanoTime() - startTime);
-                    logger.twoDatasLog("\nProcess time: ", Double.toString(duration / 1000000000.0) + " sec\n");   
+                    logger.twoDatasLog("\nProcessing time: ", Double.toString(duration / 1000000000.0) + " sec\n");   
                 }
-                else if(answer == 2){
+                else if(answer == 2) {
                     logger.loadScreen();
                     logger.twoDatasLog("Details from ", Integer.toString(allGames) + " simulations:\n");
                     logger.percentLog("Snake eye winning percent: ", path.calcSnakePercent(), " %\n");
@@ -64,18 +64,18 @@ public class Main{
                     logger.percentLog("Any craps winning percent: ", path.calcAnyCrapsPercent(), " %\n");
                     logger.percentLog("Any seven winning percent: ", path.calcAnySevenPercent(), " %\n");
                     final long duration = (System.nanoTime() - startTime);
-                    logger.twoDatasLog("\nProcess time: ", Double.toString(duration / 1000000000.0) + " sec\n");   
+                    logger.twoDatasLog("\nProcessing time: ", Double.toString(duration / 1000000000.0) + " sec\n");   
                 }
-                else if(answer == 3){
+                else if(answer == 3) {
                     
                     logger.loadScreen();
                     logger.twoDatasLog("Details from ", Integer.toString(allGames) + " simulations:\n");
 
                     String score = Integer.toString(simulator.run().getTheBestBetScore());
                     // from the Result.
-                    logger.simpleLog("The winner game's name: " + simulator.run().getTheBestBetName() + ", score: " + score); 
+                    logger.simpleLog("The winner game's name: " + simulator.run().getTheBestBetName() + " (score: " + score + ")"); 
                     final long duration = (System.nanoTime() - startTime);
-                    logger.twoDatasLog("\nProcess time: ", Double.toString(duration / 1000000000.0) + " sec\n");   
+                    logger.twoDatasLog("\nProcessing time: ", Double.toString(duration / 1000000000.0) + " sec\n");   
                 }
                 else if (answer == 4) {
                     logger.simpleLog("\033[H\033[2J");
@@ -87,7 +87,7 @@ public class Main{
                     logger.simpleLog("Any craps: Wins if a 2, 3 or 12 is thrown. Payoff 7:1\n");
                     logger.simpleLog("Any Seven: Wins if a 7 is rolled. Payoff 4:1\n");
                 }
-                else if(answer == 0){
+                else if(answer == 0) {
                     scanner.close();
                     break;
                 }
