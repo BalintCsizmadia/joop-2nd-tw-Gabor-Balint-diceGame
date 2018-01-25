@@ -12,24 +12,7 @@ public class Simulator {
     }
 
     public Result run() {
-
-/*      int wins = 0;
-        for(int i = 0 ; i < simulation.intArray.length; i++){
-            
-            int x = simulation.intArray[i];
-            if (x == 7 || x == 11) wins++;
-            if (x == 2 || x == 3 || x == 12){
-                break;
-            }
-            else {
-                for(int j = 0; j < simulation.intArray.length; j++){
-                int y = simulation.intArray[i+j];
-                if (y == 7) break;
-                if (y == x) wins++;
-                }
-            } 
-        }
-*/       
+      
         int snakeEye = 0;
         int aceDeuce = 0;
         int yo = 0;
