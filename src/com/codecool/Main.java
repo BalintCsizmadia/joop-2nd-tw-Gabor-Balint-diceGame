@@ -12,6 +12,8 @@ public class Main{
     }
     
     public static void main(String[] args) {
+        final long startTime = System.nanoTime();
+
         Logger logger = new Logger();
         if (Integer.parseInt(args[0]) >= 1) {
         Simulation simulation = generateSimulation(Integer.parseInt(args[0]));    
@@ -44,7 +46,7 @@ public class Main{
         logger.simpleLog("||||||||||||||||||||||||||");
         path.loadWaiting(700);
         logger.simpleLog("\033[H\033[2J");
-        logger.simpleLog("Simulation completed.");
+        logger.simpleLog("Simulation completed.\n");
         path.loadWaiting(700);
         logger.twoDatasLog("Details from ", Integer.toString(allGames) + " simulations:\n") ;
        // logger.log("Games", Integer.toString(allGames) + " simulations\n");
@@ -71,7 +73,10 @@ public class Main{
         logger.simpleLog("The winner game's name: " + simulator.run().getTheBestBetName() + ", score: " + score); 
         // legtöbbször nyert - játék neve (ezt már a Resultból szedi ki)
         
-
+        
+        final long duration = (System.nanoTime() - startTime);
+        String processTime = Double.toString(duration / 1000000000.0);
+        logger.twoDatasLog("\nProcess time: ", processTime + " sec");
         } else {
             logger.log("Error", "Enter a bigger number");
         }
