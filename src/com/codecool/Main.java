@@ -25,7 +25,7 @@ public class Main{
             
             logger.simpleLog("Craps Casino Calculator\n");
             while(true) {
-                logger.simpleLog("( 1.) Win from games");
+                logger.simpleLog("( 1.) Wins from games");
                 logger.simpleLog("( 2.) Winning percent");
                 logger.simpleLog("( 3.) Make me millionaire, bet this!");
                 logger.simpleLog("( 4.) Rules and chances");
