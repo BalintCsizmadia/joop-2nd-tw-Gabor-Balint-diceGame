@@ -41,12 +41,10 @@ public class Simulator {
             } else if (number == 7) {
                 anySeven++;
             }
-            
+                     
         }
         Statistics stats = new Statistics(snakeEye, aceDeuce, yo, boxCars, hiLo, anyCraps, anySeven, allGame);
         Result result = new Result(stats);
-       // result.getStatistics();
-        
        return result; 
     }
         

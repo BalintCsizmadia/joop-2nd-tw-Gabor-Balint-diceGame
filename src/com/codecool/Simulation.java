@@ -47,7 +47,6 @@ public class Simulation {
         }
     }
 
-
     public void load() {
         try {
             BufferedReader br = new BufferedReader(new FileReader("../data/results.csv"));

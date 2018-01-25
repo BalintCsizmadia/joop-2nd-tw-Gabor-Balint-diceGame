@@ -1,6 +1,5 @@
 package com.codecool;
 
-import java.util.Date;
 
 public class Logger{
 
@@ -67,6 +66,4 @@ public class Logger{
         System.out.println("Simulation completed.\n");
         loadWaiting(700);
     }
-
-
 }

@@ -5,12 +5,10 @@ public class Result {
     
     Statistics stats;
 
-
     public Result(Statistics stats) {
         this.stats = stats;
     }
     
-
     public Statistics getStatistics() {
         return stats;
     }

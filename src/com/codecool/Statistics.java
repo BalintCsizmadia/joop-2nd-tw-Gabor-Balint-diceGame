@@ -32,7 +32,6 @@ public class Statistics{
         this.findTheBiggest = new int[] {snakeEye, aceDeuce, yo, boxCars, hiLo, anyCraps, anySeven};
     }
     
-
     public String calcSnakePercent(){
         float snakeNumber = (((float)snakeEye / (float)allGame) * (float)100);
         String snakePercent = df.format(snakeNumber);
@@ -126,5 +125,3 @@ public class Statistics{
     }
         
 }
-    
-    
