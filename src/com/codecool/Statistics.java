@@ -124,17 +124,6 @@ public class Statistics{
         }
         return worstGameName;
     }
-
-    public void loadWaiting(int time) {        
-        try        
-            {
-            Thread.sleep(time);
-        } 
-        catch(InterruptedException ex) 
-            {
-            Thread.currentThread().interrupt();
-        }
-    }
         
 }
     

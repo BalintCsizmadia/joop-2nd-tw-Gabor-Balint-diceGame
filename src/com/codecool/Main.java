@@ -21,37 +21,8 @@ public class Main{
         Statistics path = simulator.run().stats;
         int allGames = path.allGame;
 
-        logger.simpleLog("\033[H\033[2J");
-        logger.simpleLog("Calculating.");
-        logger.simpleLog("--------------------------");
-        path.loadWaiting(800);
-        logger.simpleLog("\033[H\033[2J");
-        logger.simpleLog("Calculating..");
-        logger.simpleLog("||||----------------------");
-        path.loadWaiting(600);
-        logger.simpleLog("\033[H\033[2J");
-        logger.simpleLog("Calculating...");
-        logger.simpleLog("|||||||||||---------------");
-        path.loadWaiting(1000);
-        logger.simpleLog("\033[H\033[2J");
-        logger.simpleLog("Calculating.");
-        logger.simpleLog("|||||||||||||||||||-------");
-        path.loadWaiting(1100);
-        logger.simpleLog("\033[H\033[2J");
-        logger.simpleLog("Calculating..");
-        logger.simpleLog("|||||||||||||||||||||||---");
-        path.loadWaiting(500);
-        logger.simpleLog("\033[H\033[2J");
-        logger.simpleLog("Calculating...");
-        logger.simpleLog("||||||||||||||||||||||||||");
-        path.loadWaiting(700);
-        logger.simpleLog("\033[H\033[2J");
-        logger.simpleLog("Simulation completed.\n");
-        path.loadWaiting(700);
+        logger.loadScreen();
         logger.twoDatasLog("Details from ", Integer.toString(allGames) + " simulations:\n") ;
-       // logger.log("Games", Integer.toString(allGames) + " simulations\n");
-       // logger.log("Snake eye winning percent", simulator.run().stats.calcStaticSnakePercent() + " %");
-       // logger.log("Ace-deuce winning percent", simulator.run().stats.calcStaticAcePercent() + " %");
         logger.informLog("Snake eye: ", path.snakeEye, "wf", allGames, " games.");  // 30:1
         logger.percentLog("Snake eye winning percent: ", path.calcSnakePercent(), " %\n");
         logger.informLog("Ace-deuce: ", path.aceDeuce, "wf", allGames, " games.");  // 15:1
@@ -71,8 +42,7 @@ public class Main{
      //   System.out.println(path.theLeastWin()); // legkevesebbszer nyert -pontszám
      // System.out.println(path.theWorstBetGameName()); // legkevesebbet nyert - játék neve
         logger.simpleLog("The winner game's name: " + simulator.run().getTheBestBetName() + ", score: " + score); 
-        // legtöbbször nyert - játék neve (ezt már a Resultból szedi ki)
-        
+        // from the Result.
         
         final long duration = (System.nanoTime() - startTime);
         String processTime = Double.toString(duration / 1000000000.0);
