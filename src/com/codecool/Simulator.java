@@ -12,9 +12,8 @@ public class Simulator {
     }
 
     public Result run() {
-       // logger.log("run", "adatok feldolgozva és visszatoltve");
-        int wins = 0;
-/*
+
+/*      int wins = 0;
         for(int i = 0 ; i < simulation.intArray.length; i++){
             
             int x = simulation.intArray[i];
@@ -30,28 +29,17 @@ public class Simulator {
                 }
             } 
         }
-        System.out.println(wins);
 */       
-
-        /*
-        C & E: kombinált fogadás, a tét fele craps-re és a másik fele Yo-ra 
-        Horn: kombinált fogadás, 1 egységgel fogadsz a 2, 3, 11 és 12-re egyszerre.
-        Whirl vagy World: 5 egységes fogadás horn-ra és any seven-re egyszerre 
-        Field: arra fogadsz, hogy 2, 3, 4, 9, 10, 11 vagy 12 lesz a következő dobás.
-        */
-
-
         int snakeEye = 0;
         int aceDeuce = 0;
-        int yo = 0; // 11
+        int yo = 0;
         int boxCars = 0;
-        int hiLo = 0; // nyertes ha a dobás 2 vagy 12
-        int anyCraps = 0; // nyertes 2, 3 és 12 esetén
+        int hiLo = 0;
+        int anyCraps = 0;
         int anySeven = 0;
-
         int allGame = simulation.intArray.length;
 
-        for (int i = 0; i < simulation.intArray.length; i++) {
+        for (int i = 0; i < allGame; i++) {
             int number = simulation.intArray[i];
             if (number == 2) {
                 snakeEye++;
@@ -74,25 +62,9 @@ public class Simulator {
         }
         Statistics stats = new Statistics(snakeEye, aceDeuce, yo, boxCars, hiLo, anyCraps, anySeven, allGame);
         Result result = new Result(stats);
+       // result.getStatistics();
         
-        // System.out.println(result.getStatistics()); // most ez printel egyet
-
-        return result;
-
-        
+       return result; 
     }
-    /*
-    public String toString() {
-        return "Snake eye: " + snakeEye + " wins from " + allGame + " games.\n" + 
-               "Ace-deuce: " + aceDeuce + " wins from " + allGame + " games.\n" + 
-               "Yo: " + yo + " wins from " + allGame + " games.\n" +
-               "Boxcars: " + boxCars + " wins from " + allGame + " games.\n" +
-               "Hi-lo: " + hiLo + " wins from " + allGame + " games.\n" +
-               "Any craps: " + anyCraps + " wins from " + allGame + " games.\n" + 
-               "Any seven: " + anySeven + " wins from "  + allGame + " games.";
-    }
-    */
-    
-        
         
 }
